@@ -1,9 +1,9 @@
 ---
-title: Example Project
-summary: An example of using the in-built project page.
+title: 极简抖音
+summary: 使用SpringBoot和Mybatis实现的的抖音后端
 tags:
-  - Deep Learning
-date: '2016-04-27T00:00:00Z'
+  - 后端
+date: '2022-07-27T00:00:00Z'
 
 # Optional external URL for project (replaces project detail page).
 external_link: ''
