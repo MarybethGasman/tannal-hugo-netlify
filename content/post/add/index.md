@@ -41,7 +41,7 @@ categories:
   - 教程
 ---
 
-```javasctipt
+```javascript
 function add(x, y) {
     return x + y;
 }
