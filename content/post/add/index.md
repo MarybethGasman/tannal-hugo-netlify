@@ -41,9 +41,9 @@ categories:
   - 教程
 ---
 
-```js
+```javasctipt
 function add(x, y) {
-    return add(x, y);
+    return x + y;
 }
 ```
 
