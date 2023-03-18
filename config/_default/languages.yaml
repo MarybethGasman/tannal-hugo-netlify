@@ -12,9 +12,9 @@ en:
 zh:
  languageCode: zh-Hans
  contentDir: content/zh
- title: Chinese website title...
+ title: TanMeng
  params:
-   description: Site description in Chinese...
+   description: 谭的个人主页
  menu:
    main:
     - name: 主页
@@ -26,6 +26,6 @@ zh:
     - name: 项目
       url: '#projects'
       weight: 30
-    - name: Contact
+    - name: 联系
       url: '#contact'
       weight: 60
