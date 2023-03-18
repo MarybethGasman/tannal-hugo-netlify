@@ -17,6 +17,15 @@ zh:
    description: Site description in Chinese...
  menu:
    main:
-     - name: 传
-       url: '#about'
-       weight: 1
+    - name: 主页
+      url: '#about'
+      weight: 10
+    - name: 帖子
+      url: '#posts'
+      weight: 20
+    - name: 项目
+      url: '#projects'
+      weight: 30
+    - name: Contact
+      url: '#contact'
+      weight: 60
