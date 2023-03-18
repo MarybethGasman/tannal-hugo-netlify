@@ -146,10 +146,10 @@ sections:
       buttons:
         - name: All
           tag: '*'
-        - name: Deep Learning
-          tag: Deep Learning
-        - name: Other
-          tag: Demo
+        - name: 前端
+          tag: 前端
+        - name: 后端
+          tag: 后端
     design:
       # Choose how many columns the section has. Valid values: '1' or '2'.
       columns: '1'
