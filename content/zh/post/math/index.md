@@ -1,0 +1,220 @@
+---
+title: 论文（持续更新）
+subtitle: 本文简要介绍读过的论文和成果，记录论文总结（paper review）
+
+# Summary for listings and search engines
+summary: 本文简要介绍读过的论文和成果，记录论文总结（paper review），一个带[数字]的大标题为一篇论文,若某论文内容过多会单独写成独立的文章，所有的论文都列在最后的参考文献中，本文持续更新。
+
+# Link this post with a project
+projects: []
+
+# Date published
+date: '2020-12-13T00:00:00Z'
+
+# Date updated
+lastmod: '2020-12-13T00:00:00Z'
+
+# Is this an unpublished draft?
+draft: false
+
+# Show this page in the Featured widget?
+featured: false
+
+# Featured image
+# Place an image named `featured.jpg/png` in this page's folder and customize its options here.
+image:
+  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/CpkOjOcXdUY)'
+  focal_point: ''
+  placement: 2
+  preview_only: false
+
+authors:
+  - admin
+  - Tannal
+
+tags:
+  - Academic
+  - 开源
+
+categories:
+  - papers
+  - 网络
+---
+
+# 简介
+
+本文简要介绍读过的论文和成果，记录论文总结（paper review），一个带[数字]的大标题为一篇论文,若某论文内容过多会单独写成独立的文章，所有的论文都列在最后的参考文献中，本文持续更新。
+
+
+$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
+
+$e = mc^2$
+
+$\sum_{i=1}^n a_i$
+
+$\prod_{i = 1} ^ n a_i$
+
+https://react.dev/
+
+# 互联网的设计哲学[1]
+
+> The most serious problem was
+that networks designed with one particular type of service
+in mind were not flexible enough to support other
+services
+
+互联网出现之前的网络都是为了解决特定的问题，缺乏一个统一的有效的方案。
+
+TCP/IP协议簇最早在1973年提出，当时是为了创建互联网，DOD模型是OSI模型的早期版本。
+
+![](https://www.oreilly.com/api/v2/epubs/9781118435250/files/images/ch002-f001.jpg)
+
+互联网架构设计的顶层目标是创造一个有效的方法，高效利用和连接已存在的各种网络。
+
+> The top level goal for the DARPA Internet Architecture
+was to develop an effective technique for multiplexed
+utilization of existing interconnected networks.
+
+其中有效的（effective）主要有以下含义
+1. 互联网中的网关或其他节点宕机，网络依然可以正常运行
+2. 互联网必须支持多种类型的信息交换服务
+
+    这里的不同类型主要用三个维度来区分，速率，时延，可靠性。例如看视频速度主要，打游戏时延重要，网站服务可靠性重要。
+
+    论文里举了远程登录和文件传输的例子，这是互联网最早采用传输控制协议解决的问题。TCP一开始就被作为大杀器，希望能够用于解决大部分的网络服务，最后发现做不到。
+
+    正是支持各种应用服务的需要，最后TCP协议被拆分成两层TCP和IP。由于IP层并不保证可靠传输，所以传输层既可以向上层应用提供可靠的TCP服务，也可以提供不可靠的UDP服务。
+
+
+3. 互联网必须能容纳足够多的网络，特别是已存在的那些。
+
+    正因为这种类似兼容的需求，传输层以下与实际的应用服务无关，
+4. 互联网里的网关或者节点，可以被分布式地，去中心化地管理。
+
+    既不同的机构和组织一起构成互联网，互联网里的节点和网关不必被统一管理。
+5. 足够的性价比
+6. 新节点的加入足够简单
+7. 需要投入的资源是可接受的
+
+这些含义具有优先级，最重要的排在前面。
+因为网络一开始是军方使用，可靠性必须排在首位，至于成本和性价比相对不是那么重要。
+
+当时是当时，现在互联网是大量商业服务的根基，商业公司比谁都看重性价比和成本，所以很多问题直到互联网大规模商业化后才开始关注。
+
+> The original goal was to connect together the original ARPANET with the ARPA packet radio network, in order to give users on the packet radio network access to
+the large service machines on the ARPANET.
+
+
+> A surprising observation about the
+control of variation in delay is that the most serious
+source of delay in networks is the mechanism to provide
+reliable delivery. A typical reliable transport protocol
+responds to a missing packet by requesting a
+retransmission and delaying the delivery of any
+subsequent packets until the lost packet has been
+retransmitted
+
+很有意思的现象，可靠传输可以造成网络延迟升高或阻塞，因为丢了一个包，发送方会重新传输占用资源，而接收方顺序较为后面的包即使到达，也会被丢弃，而且接收方传输层一次性提交一堆分组给上层应用，如果只到达一两个分组，接收方不会将已到达的分组提交给上层应用，这增加了时延。
+
+> If it does, high level error
+correction can occur, and the listener can ask the speaker
+to repeat the damaged phrase
+
+又是一个很有趣的想法，佐证了类似语音电话不需要TCP可靠传输，因为丢掉的包对于高层级的通信实体来说并不一定重要，如果重要，高层实体会请对方重说。
+
+- 分组交换
+![](https://upload.wikimedia.org/wikipedia/commons/f/f6/Packet_Switching.gif)
+
+- 电路交换（多路复用器）
+![](https://upload.wikimedia.org/wikipedia/commons/6/6f/Multiplexing_diagram.svg)
+
+互联网是一个分组交换的通信设施，包含一定数量使用网关相互连接的网络，这些网关具备存储分组和转发分组的能力（算法）。
+
+# Why the Internet only just works[7]
+
+世界上第一个大规模分组交换网络是ARPnet，NCP是其中的基础协议，NCP同时负责了网络层和传输层。互联网大部分的高层协议都来自于上世纪70年代的ARPnet。
+
+1982年以前域名系统（DNS）还不存在，当时是用hosts文件作为名称映射。
+
+1980年代中叶，互联网碰到各种各样的拥塞问题，大量的带宽资源浪费在无用的传输上。
+拥塞是网络层的问题，无论是TCP还是UDP都能造成网络拥塞。
+
+一种解决方案是加一层抽象单独控制拥塞，但是现有的所有系统也必须加上这一层，这个方案不好落地。
+
+最简单的方法就是只修补眼前的拥塞问题，不引人其他设计，于是TCP拥塞控制诞生了，它既能向后兼容，又不需要修改所有已存在的网络节点。
+
+尽管TCP的拥塞控制非常成功，但它从来就不是解决互联网拥塞的唯一方案，也不是最优方案，它足够好，好到没有人愿意动摇它，所以保留到了今天。
+
+1990年代，美国国家科学基金会（NSF）建立了一个新的互联网骨架（NSFnet），用于连接美国的各个学术机构。但较为私密的NSFnet被禁止用于商业流量，这是创造策略路由的原始推动力，互联网中的每一个网络能够自己选择流量的路由路径，边际网关协议也因此诞生。
+
+![Alt text](/internet-scaling.png)
+
+互联网成长地实在太快，以至于ISPs根本来不及做长远设计，只能解决眼前生存问题。
+
+1993年，CIDR[8]被提出，互联网开始从学术网络转变为商业网络。NCSA Mosaic网页浏览器的发布，万维网开始流行，进一步推动互联网的商业化进程。
+
+从1993年开始，互联网的核心协议栈没有较大的变动，只有一些小的增强（enhancement）。在IP层及其上层，十多年来基本没有变化。数据链路层已经十年没变过了，而网络层已经20多年没变了。互联网正陷入僵化，无法满足新的需求。
+
+传输层不是应该很好变动吗？因为我们采用分层架构，类似深度包检测[9]技术的流行加重了网络层的僵化。
+
+短期问题
+
+- 垃圾邮件
+- 安全
+- 拒绝服务攻击
+
+中期问题
+
+- 拥塞控制
+- 域间路由[11]
+- 移动设备
+- 多宿主[12]
+- 架构僵化
+
+长期问题
+
+- 地址空间耗尽
+
+Qos和IP多播这些解决网络融合[10]的方法被认为已经失败。
+
+# End-To-End Arguments in System Design[13]
+
+这篇论文列举了很多由网络通信系统负责的任务实际上是网络应用的职责，例如，可靠传输，避免重复，顺序发出顺序到达等。
+
+换句话说，即使网络通信系统提供了这些保障，很多应用程序还是要自己再实现一遍。本论文认为可以把这样的功能留给应用层处理，简化网络通信系统。
+
+HTTP3弃用TCP，该用UDP协议，也算是把可靠传输放到了应用层，让应用层负责更多的任务，这体现了这篇1984年的论文的思想。
+
+
+# 如何审阅论文和编写评论[14]
+
+# Grapevine，一次分布式的历练[15]
+
+Grapevine是一个邮件服务器，它将发件人的邮件存储在服务器中，等待收件人获取。
+
+# 比较Amoeba和Sprite两个分布式操作系统[16]
+
+关于Amoeba
+
+>The aim of the Amoeba project was to build a timesharing system that makes an entire network of computers appear to the user as a single machine. Development at the Vrije Universiteit was stopped: the source code of the latest version (5.3) was last modified on 30 July 1996.[17]
+
+关于Sprite
+
+> Sprite is an experimental Unix-like distributed operating system developed at the University of California, Berkeley by John Ousterhout's research group between 1984 and 1992. Its notable features include support for single system image on computer clusters and the introduction of the log-structured filesystem. The Tcl scripting language also originated in this project.
+
+
+# 参考文献
+[1] The design philosophy of the DARPA internet https://dl.acm.org/doi/10.1145/52324.52336
+
+[7] Why the Internet only just works http://www0.cs.ucl.ac.uk/staff/M.Handley/papers/only-just-works.pdf
+
+[13] End-To-End Arguments in System Design https://dl.acm.org/doi/10.1145/357401.357402
+
+[14] 如何审阅论文 https://www.cl.cam.ac.uk/teaching/1011/R01/review-writing.pdf
+
+[15] Birrell, A. D., Levin, R., Schroeder, M. D., & Needham, R. M. (1982). Grapevine: an exercise in distributed computing. Communications of the ACM, 25(4), 260–274. doi:10.1145/358468.358487
+
+[16] 比较Amoeba和Sprite两个分布式操作系统 https://www.usenix.org/legacy/publications/compsystems/1991/fall_douglis.pdf
+
+[17] Amoeba操作系统 https://en.wikipedia.org/wiki/Amoeba_(operating_system)
+
