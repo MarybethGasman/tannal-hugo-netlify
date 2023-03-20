@@ -26,6 +26,3 @@ zh:
     - name: 项目
       url: '#projects'
       weight: 30
-    - name: 联系
-      url: '#contact'
-      weight: 60
