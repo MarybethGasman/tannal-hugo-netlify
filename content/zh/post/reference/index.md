@@ -46,6 +46,8 @@ categories:
 
 下面两个代码是等价的
 
+编译出来的汇编是一样的
+
 ```c
 void increment(int *x) {
     (*x)++;
@@ -59,5 +61,12 @@ void increment(int & x) {
 }
 
 ```
+
+
+# 如何理解
+
+可以把C++的引用理解为指针的语法糖
+
+
 
 
