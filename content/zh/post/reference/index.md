@@ -62,7 +62,22 @@ void increment(int & x) {
 
 ```
 
-![](featured.png)
+```diff
+ 	movq	%rsp, %rbp	#,
+ 	.cfi_def_cfa_register 6
+ 	movq	%rdi, -8(%rbp)	# x, x
+-# main.cpp:3:     (*x)++;
++# main.cpp:3:     (x)++;
+ 	movq	-8(%rbp), %rax	# x, tmp84
+ 	movl	(%rax), %eax	# *x_4(D), _1
+-# main.cpp:3:     (*x)++;
++# main.cpp:3:     (x)++;
+ 	leal	1(%rax), %edx	#, _2
+ 	movq	-8(%rbp), %rax	# x, tmp85
+ 	movl	%edx, (%rax)	# _2, *x_4(D)
+```
+
+![](diff.png)
 
 # 如何理解
 
