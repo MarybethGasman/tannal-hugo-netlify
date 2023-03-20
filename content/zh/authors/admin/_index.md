@@ -46,7 +46,7 @@ social:
   - icon: envelope
     icon_pack: fas
     link: '/#contact'
-  - icon: gmail
+  - icon: email
     icon_pack: fab
     link: mailto:tannal.cn@gmail.com
     label: Send an Email to Me
