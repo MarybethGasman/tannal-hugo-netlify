@@ -51,7 +51,7 @@ social:
     link: https://www.github.com/MarybethGasman
     label: Follow me on Github
     display:
-      header: true
+      header: false
   - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
     icon_pack: fas
     link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ

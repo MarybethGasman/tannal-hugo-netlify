@@ -1,8 +1,9 @@
 ---
-title: Example Project
-summary: An example of using the in-built project page.
+title: Skyline-UI
+summary: 一个基于Vue3的组件库.
 tags:
-  - Deep Learning
+  - 前端
+  - Vue3
 date: '2016-04-27T00:00:00Z'
 
 # Optional external URL for project (replaces project detail page).
