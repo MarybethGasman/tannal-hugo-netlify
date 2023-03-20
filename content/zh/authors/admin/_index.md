@@ -46,10 +46,10 @@ social:
   - icon: envelope
     icon_pack: fas
     link: '/#contact'
-  - icon: envelope
+  - icon: github
     icon_pack: fab
-    link: mailto:tannal.cn@gmail.com
-    label: Send an Email to Me
+    link: https://www.github.com/MarybethGasman
+    label: Follow me on Github
     display:
       header: true
   - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
