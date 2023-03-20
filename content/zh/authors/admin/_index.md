@@ -45,8 +45,8 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: '/#contact'
-  - icon: wechat
+    link: mailto:tannal.cn@gmail.com
+  - icon: weixin
     icon_pack: fas
     label: mengtanjing
     link: ''
