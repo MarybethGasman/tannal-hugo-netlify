@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>谭盟 — 简历</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --font-family: "Source Sans Pro", "Lato", "Helvetica", "Open Sans", "Arial",
+        sans-serif;
+      --font-monospace: "DejaVu Sans Mono", "Fira Code", "Courier New", monospace;
+      --border-main: 2px solid #ccc;
+      --left-width: 63%;
+      --right-width: 37%;
+    }
+
+    @font-face {
+      font-family: "Source Sans Pro";
+      font-style: normal;
+      font-display: swap;
+      font-weight: 400;
+      src: local("Source Sans Pro Regular"), local("SourceSansPro-Regular");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+        U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+        U+FEFF, U+FFFD;
+    }
+
+    @font-face {
+      font-family: "Source Sans Pro";
+      font-style: normal;
+      font-display: swap;
+      font-weight: 700;
+      src: local("Source Sans Pro Bold"), local("SourceSansPro-Bold");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+        U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+        U+FEFF, U+FFFD;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    body {
+      background: #fff;
+      width: 100%;
+      max-width: 21cm;
+      margin: 0 auto;
+      min-height: 29.7cm;
+      min-height: calc(29.7cm + 0.5cm);
+      display: flex;
+      flex-direction: column;
+      font-family: var(--font-family);
+      text-rendering: optimizeLegibility;
+    }
+
+    hr {
+      margin: 1em 0;
+      background: none;
+      border: none;
+      border-top: var(--border-main);
+      height: 2px;
+    }
+
+    .icon {
+      max-width: 16px;
+      margin-right: 0.5em;
+      user-select: none;
+      display: inline-block;
+    }
+
+    a {
+      color: #0d4ac5;
+    }
+
+    a:hover,
+    a:focus {
+      outline: none;
+      background: hsl(116deg 100% 50% / 30%);
+      box-shadow: 0px 0 0 0.1em hsl(176deg 100% 50% / 30%);
+    }
+
+    .monospace {
+      font-family: var(--font-monospace);
+    }
+
+    .no-select {
+      user-select: none;
+    }
+
+    .visually-hidden {
+      border: 0;
+      padding: 0;
+      margin: 0;
+      position: absolute !important;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px 1px 1px 1px);
+      clip: rect(1px, 1px, 1px, 1px);
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    h1,
+    h2,
+    strong {
+      font-weight: 700;
+    }
+
+    .with-icon {
+      display: flex;
+      align-items: center;
+    }
+
+    address {
+      font-style: normal;
+    }
+
+    li {
+      margin-left: 1em;
+    }
+
+    .empty-line {
+      display: block;
+      height: 1em;
+    }
+
+    .header {
+      position: relative;
+    }
+
+    .header h1,
+    .header p {
+      line-height: 1.2;
+      padding: 0.5rem 1rem 0.2rem;
+      text-transform: uppercase;
+    }
+
+    .header h1 {
+      font-size: 2.6em;
+    }
+
+    .header h1 span:nth-child(2) {
+      font-weight: 400;
+    }
+
+    .header p {
+      padding-top: 0;
+      margin: 0 0 0.6em;
+      font-weight: 400;
+      font-size: 1.2em;
+    }
+
+    main {
+      display: flex;
+      border-top: var(--border-main);
+      height: 100%;
+      overflow: hidden;
+    }
+
+    main .left,
+    main .right {
+      padding: 0.5em 1em;
+    }
+
+    main .left {
+      width: var(--left-width);
+      border-right: var(--border-main);
+    }
+
+    main .right {
+      width: var(--right-width);
+    }
+
+    h2 {
+      margin: 0.5em 0;
+      font-size: 1.3rem;
+      line-height: 1.4;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    h2:after {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 40px;
+      height: 0;
+      border-bottom: var(--border-main);
+    }
+
+    h3 {
+      font-size: 1rem;
+    }
+
+    div section+section {
+      margin: 1em 0;
+    }
+
+    div section+section::before {
+      content: "";
+      display: block;
+      border-top: var(--border-main);
+      height: 2px;
+    }
+
+    article+article {
+      margin-top: 1em;
+    }
+
+    .projects article header>* {
+      display: inline-block;
+    }
+
+    .projects article header a::before {
+      color: initial;
+      content: "(";
+    }
+
+    .projects article header a::after {
+      color: initial;
+      content: ")";
+    }
+
+    .contact {
+      font-size: 0.9em;
+    }
+
+    .contact dl {
+      display: grid;
+      grid-template-columns: max-content auto;
+      column-gap: 0.5em;
+      row-gap: 0.1em;
+    }
+
+    .contact dl dt {
+      grid-column-start: 1;
+      font-family: var(--font-monospace);
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .contact dl dd {
+      grid-column-start: 2;
+    }
+
+    @media only print {
+      .noprint {
+        display: none;
+      }
+
+      abbr {
+        text-decoration: none;
+      }
+
+      section.no-border::before {
+        border-top: 0;
+      }
+
+      section {
+        page-break-inside: avoid;
+      }
+
+      body {
+        /* A4 sheet */
+        width: 21cm;
+        /* height: 29.7cm;
+        max-height: 29.7cm; */
+      }
+    }
+
+    @media screen and (max-width: 42em) {
+      :root {
+        --left-width: 100%;
+        --right-width: 100%;
+      }
+
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      main {
+        flex-direction: column;
+        border-top: none;
+      }
+
+      main .left {
+        border-right: none;
+      }
+
+      .header {
+        box-shadow: 0 2px 2px 0px #f1efef;
+      }
+
+      .header h1 {
+        margin-top: 0.5em;
+        font-size: 2em;
+      }
+
+      .header p {
+        font-size: 1em;
+      }
+
+      .education {
+        flex-direction: column;
+      }
+
+      .education>div:nth-child(n + 1) {
+        padding: 0.4em 0;
+      }
+
+      .header a {
+        font-size: 12px;
+        top: 0.5rem;
+        right: 0.5rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+  <meta name="monetization" content="$ilp.uphold.com/BmXpharJp7Hk">
+  <meta name="description" content="Sudhanshu Vishnoi (Sid Vishnoi) is
+  passionate about web development and building software. He loves to work with
+  JavaScript and C++, with a growing curiosity towards Rust.">
+</head>
+
+<body>
+  <header class="header">
+    <h1><span>Tan</span> <span>Meng</span></h1>
+    <p>WEB Developer / 
+      <svg style="width: 20px;vertical-align: middle;" class="text-default h-10 flex-none" viewBox="0 0 30 30"
+        fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Deno Logo">
+        <g clip-path="url(#clip0_29_599)">
+          <path
+            d="M15 0C23.2843 0 30 6.71572 30 15C30 23.2843 23.2843 30 15 30C6.71572 30 0 23.2843 0 15C0 6.71572 6.71572 0 15 0Z"
+            fill="currentColor"></path>
+          <path
+            d="M14.6635 22.3394C14.2788 22.2357 13.8831 22.4584 13.7705 22.8381L13.7655 22.8558L12.7694 26.5472L12.7649 26.565C12.6711 26.9498 12.9011 27.3414 13.2858 27.4451C13.6704 27.549 14.0661 27.3263 14.1787 26.9465L14.1837 26.9289L15.1797 23.2375L15.1843 23.2196C15.1911 23.1919 15.1962 23.164 15.1997 23.1362L15.2026 23.1084L15.179 22.9888L15.1445 22.8166L15.1227 22.7091C15.076 22.619 15.0111 22.5396 14.932 22.4759C14.853 22.4123 14.7615 22.3658 14.6635 22.3394ZM7.7224 18.5379C7.70424 18.5741 7.68883 18.6123 7.67658 18.6522L7.66967 18.6763L6.67358 22.3677L6.669 22.3856C6.57525 22.7704 6.80524 23.1619 7.1899 23.2657C7.57451 23.3695 7.97026 23.1469 8.08287 22.7671L8.08779 22.7494L8.99096 19.4023C8.51793 19.1518 8.09336 18.8628 7.7224 18.5379ZM5.34707 14.2929C4.9624 14.1891 4.56666 14.4117 4.4541 14.7915L4.44912 14.8092L3.45303 18.5006L3.44846 18.5184C3.35471 18.9032 3.58469 19.2947 3.96936 19.3985C4.35397 19.5023 4.74971 19.2797 4.86232 18.8999L4.86725 18.8822L5.86334 15.1908L5.86791 15.173C5.96166 14.7882 5.73174 14.3967 5.34707 14.2929ZM27.682 13.4546C27.2973 13.3508 26.9015 13.5734 26.789 13.9532L26.784 13.9709L25.7879 17.6623L25.7833 17.6801C25.6896 18.0649 25.9196 18.4564 26.3042 18.5602C26.6889 18.664 27.0846 18.4414 27.1972 18.0616L27.2021 18.0439L28.1982 14.3525L28.2028 14.3347C28.2965 13.9499 28.0666 13.5584 27.682 13.4546ZM3.17781 8.52527C2.34361 10.0444 1.81243 11.7112 1.61377 13.4329C1.7088 13.5412 1.83381 13.619 1.97301 13.6563C2.35768 13.7602 2.75342 13.5375 2.86598 13.1577L2.87096 13.1401L3.86705 9.44865L3.87162 9.43084C3.96537 9.04599 3.73539 8.65447 3.35072 8.5507C3.2943 8.53547 3.23623 8.52694 3.17781 8.52527ZM25.159 8.5507C24.7744 8.44687 24.3786 8.66953 24.266 9.04933L24.2611 9.06697L23.265 12.7584L23.2604 12.7762C23.1667 13.161 23.3966 13.5526 23.7813 13.6563C24.1659 13.7602 24.5617 13.5375 24.6743 13.1577L24.6792 13.1401L25.6753 9.44865L25.6799 9.43084C25.7736 9.04599 25.5436 8.65447 25.159 8.5507Z"
+            fill="white"></path>
+          <path
+            d="M7.51285 5.04065C7.12824 4.93682 6.73249 5.15948 6.61988 5.53929L6.61495 5.55692L5.61886 9.24833L5.61429 9.26614C5.52054 9.65098 5.75052 10.0425 6.13519 10.1463C6.5198 10.2501 6.91554 10.0274 7.02816 9.64764L7.03308 9.63001L8.02917 5.9386L8.03374 5.92079C8.12749 5.53595 7.89751 5.14442 7.51285 5.04065ZM20.3116 5.73845C19.9269 5.63462 19.5312 5.85727 19.4186 6.23708L19.4136 6.25471L18.7443 8.73499C19.1779 8.94915 19.5917 9.20126 19.9809 9.48839L20.0453 9.53643L20.8279 6.63639L20.8324 6.61858C20.9262 6.23374 20.6963 5.84221 20.3116 5.73845ZM13.7968 1.57642C13.3296 1.61771 12.8647 1.68338 12.4043 1.77317L12.3066 1.79263L11.3782 5.23419L11.3736 5.252C11.2799 5.63684 11.5099 6.02837 11.8945 6.13214C12.2792 6.23596 12.6749 6.01331 12.7875 5.6335L12.7924 5.61587L13.7885 1.92446L13.7931 1.90665C13.8196 1.79831 13.8209 1.68533 13.7968 1.57642ZM22.9626 4.1263L22.7669 4.85169L22.7623 4.86944C22.6686 5.25429 22.8986 5.64581 23.2832 5.74958C23.6678 5.85341 24.0636 5.63075 24.1762 5.25095L24.1811 5.23331L24.2025 5.15462C23.8362 4.81205 23.4511 4.49009 23.0491 4.19022L22.9626 4.1263ZM17.1672 1.69677L16.8139 3.00593L16.8094 3.02374C16.7156 3.40858 16.9456 3.80011 17.3303 3.90388C17.7149 4.0077 18.1106 3.78505 18.2233 3.40524L18.2282 3.38761L18.6 2.00966C18.1624 1.88867 17.719 1.79001 17.2714 1.71405L17.1672 1.69677Z"
+            fill="white"></path>
+          <path
+            d="M9.69085 24.6253C9.80341 24.2455 10.1992 24.0229 10.5838 24.1266C10.9685 24.2303 11.1984 24.6219 11.1047 25.0068L11.1001 25.0246L10.3872 27.6664L10.2876 27.6297C9.85836 27.4694 9.43765 27.2873 9.0271 27.0839L9.68587 24.6429L9.69085 24.6253Z"
+            fill="white"></path>
+          <path
+            d="M14.4141 8.49082C10.0522 8.49082 6.65918 11.2368 6.65918 14.6517C6.65918 17.8769 9.78123 19.9362 14.6211 19.8331C15.0327 19.8243 15.1517 20.1008 15.2856 20.4734C15.4196 20.846 15.7796 22.8097 16.0665 24.3117C16.3233 25.656 16.5842 27.0052 16.7834 28.3596C19.9439 27.9418 22.8663 26.3807 25.0076 24.0261L22.7237 15.5088C22.1544 13.4518 21.489 11.5564 19.7283 10.1794C18.3118 9.07166 16.5122 8.49082 14.4141 8.49082Z"
+            fill="white"></path>
+          <path
+            d="M15.3516 10.957C15.8694 10.957 16.2891 11.3767 16.2891 11.8945C16.2891 12.4123 15.8694 12.832 15.3516 12.832C14.8338 12.832 14.4141 12.4123 14.4141 11.8945C14.4141 11.3767 14.8338 10.957 15.3516 10.957Z"
+            fill="currentColor"></path>
+        </g>
+        <defs>
+          <clipPath id="clip0_29_599">
+            <rect width="30" height="30" fill="white"></rect>
+          </clipPath>
+        </defs>
+      </svg>
+      <a href="https://github.com/denoland/deno">Deno</a> Contributor
+    </p>
+  </header>
+
+  <main>
+    <div class="left">
+      <section class="projects no-border">
+        <h2>Projects</h2>
+        <article>
+          <header>
+            <h3>MIT6.828 Course Lab</h3>
+            <a href="https://github.com/MarybethGasman/MIT6.828">MIT6.828</a>
+          </header>
+          <ul>
+            <li>Implemented sleep, lock granularity performance optimization, and system call flow labs.</li>
+            <li>Included comprehensive lab reports with detailed descriptions of the experiment process and understanding of the code</li>
+          </ul>
+        </article>
+        <article>
+          <header>
+            <h3>Tiktok-lite</h3>
+            <a href="https://github.com/MarybethGasman/tiktok">Tiktok</a>
+          </header>
+          <ul>
+            <li>Backend implementation using Java, SpringBoot, and Mybatis</li>
+            <li>including user authentication, video browsing, likes, comments, and follow functions</li>
+          </ul>
+        </article>
+        <article>
+          <header>
+            <h3>BliBli</h3>
+            <a href="http://124.223.112.154:3000/bilibili">Demo</a>
+          </header>
+          <ul>
+            <li>Basic implementation of the first screen of the Bilibili homepage, including the navigation bar, category tags, carousel, video list, and video card mask</li>
+            <li>Using the actual Bilibili API, there is still much room for optimization in terms of first screen loading speed</li>
+          </ul>
+        </article>
+        <article>
+          <header>
+            <h3>SkylineUI Component Library</h3>
+            <a href="https://github.com/MarybethGasman/fake-server">SkylineUI</a>
+          </header>
+          <ul>
+            <li>Implemented a component library based on Vite, compatible with Vue single file components and TSX</li>
+            <li>Implemented components include buttons, progress bars, icons, breadcrumbs, and forms</li>
+          </ul>
+        </article>
+      </section>
+      <section class="skills">
+        <h2>skills</h2>
+        <ul>
+          <li>
+            <strong>Basic Qualities</strong>
+            <ul>
+              <li>Solid computer fundamentals and understanding of how computer system works</li>
+              <li>Rigorous thinking, proactive work, and strong sense of responsibility</li>
+              <li>Good habits in documentation writing and code writing standards</li>
+              <li>Pursue excellence, unwilling to be mediocre, with a strong sense of career and innovative spirit</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Technical Exposure</strong>
+            <ul>
+              <!-- <li>熟悉TCP/IP、HTTP/HTTPS等网络协议，精通Socket网络编程，有网络故障的Trace能力</li> -->
+              <!-- <li>熟练掌握并理解应用前端基础知识</li> -->
+              <!-- <li>能够在多浏览器高保真还原设计稿</li> -->
+              <li>A certain understanding of the design and implementation of operating systems such as Linux</li>
+              <li>Familiarity with common databases, networks, caches, and API designs</li>
+              <li>Good foundation in computer networks and architecture</li>
+              <!-- <li>对JVM 原理有一定的了解</li> -->
+              <li>Proficient in problem diagnosis and resolution, managing two online production servers</li>
+            </ul>
+          </li>
+          <!-- <li>
+            <strong>语言能力</strong>
+            <ul>
+              <li>能阅读英文论文、书籍、文献</li>
+              <li>能与英语母语者交流</li>
+              <li>能翻译英文文档文献</li>
+            </ul>
+          </li> -->
+        </ul>
+      </section>
+    </div>
+
+    <div class="right">
+      <section class="contact">
+        <h2>Contact</h2>
+        <dl>
+          <dt>
+            <strong aria-hidden="true" class="no-select">e.</strong>
+            <span class="visually-hidden">Email</span>
+          </dt>
+          <dd>
+            <a href="mailto:tannal.cn@gmail.com">tannal.cn@gmail.com</a>
+          </dd>
+
+          <dt>
+            <strong aria-hidden="true" class="no-select">w.</strong>
+            <span class="visually-hidden">Website</span>
+          </dt>
+          <dd>
+            <a href="https://tannal.deno.dev/">tannal.deno.dev</a>
+          </dd>
+          <dt>
+            <strong aria-hidden="true" class="no-select">t.</strong>
+            <span class="visually-hidden">Telephone</span>
+          </dt>
+          <dd>
+            <a href="tel:+8613575238245">+8613575238245</a>
+          </dd>
+          <dt style="margin-top: 1em">
+            <svg width="16" height="16" aria-hidden="true" viewBox="0 0 32 32">
+              <path
+                d="M16 0.396c-8.84 0-16 7.164-16 16 0 7.071 4.584 13.067 10.94 15.18 0.8 0.151 1.093-0.344 1.093-0.769 0-0.38-0.013-1.387-0.020-2.72-4.451 0.965-5.389-2.147-5.389-2.147-0.728-1.847-1.78-2.34-1.78-2.34-1.449-0.992 0.112-0.972 0.112-0.972 1.607 0.112 2.451 1.648 2.451 1.648 1.427 2.447 3.745 1.74 4.66 1.331 0.144-1.035 0.556-1.74 1.013-2.14-3.553-0.4-7.288-1.776-7.288-7.907 0-1.747 0.62-3.173 1.647-4.293-0.18-0.404-0.72-2.031 0.14-4.235 0 0 1.34-0.429 4.4 1.64 1.28-0.356 2.64-0.532 4-0.54 1.36 0.008 2.72 0.184 4 0.54 3.040-2.069 4.38-1.64 4.38-1.64 0.86 2.204 0.32 3.831 0.16 4.235 1.020 1.12 1.64 2.547 1.64 4.293 0 6.147-3.74 7.5-7.3 7.893 0.56 0.48 1.080 1.461 1.080 2.96 0 2.141-0.020 3.861-0.020 4.381 0 0.42 0.28 0.92 1.1 0.76 6.401-2.099 10.981-8.099 10.981-15.159 0-8.836-7.164-16-16-16z">
+              </path>
+            </svg>
+            <span class="visually-hidden">GitHub</span>
+          </dt>
+          <dd style="margin-top: 1em;">
+            <a href="https://www.github.com/MarybethGasman">MarybethGasman</a>
+          </dd>
+
+          <!-- <dt>
+            <svg
+              width="16"
+              height="16"
+              aria-hidden="true"
+              viewBox="0 0 32 32"
+            >
+              <path
+                d="M27.263 27.269h-4.739v-7.425c0-1.771-0.036-4.049-2.469-4.049-2.471 0-2.848 1.927-2.848 3.919v7.556h-4.739v-15.269h4.552v2.081h0.061c0.636-1.2 2.183-2.467 4.493-2.467 4.801 0 5.689 3.16 5.689 7.273v8.381zM7.116 9.911c-1.525 0-2.751-1.235-2.751-2.753 0-1.517 1.227-2.751 2.751-2.751 1.52 0 2.752 1.233 2.752 2.751 0 1.519-1.233 2.753-2.752 2.753zM9.492 27.269h-4.752v-15.269h4.752v15.269zM29.633 0h-27.272c-1.305 0-2.361 1.032-2.361 2.305v27.389c0 1.275 1.056 2.305 2.361 2.305h27.268c1.304 0 2.371-1.031 2.371-2.305v-27.389c0-1.273-1.067-2.305-2.371-2.305h0.004z"
+              ></path>
+            </svg>
+            <span class="visually-hidden">LinkedIn</span>
+          </dt>
+          <dd>
+            <a href="https://www.linkedin.com/in/sudhanshu-vishnoi/"
+              >linkedin.com/in/sudhanshu-vishnoi</a
+            >
+          </dd> -->
+        </dl>
+      </section>
+
+      <section class="education">
+        <h2>Education</h2>
+        <article>
+          <h3>Bachelor's in Computer Science</h3>
+          <p>
+            Northeast Normal University
+          </p>
+          <time datetime="156w">2020 &ndash; 2024</time>
+        </article>
+      </section>
+
+      <section>
+        <h2>Achievements</h2>
+        <ul>
+          <li>First-class scholarship for academic performance</li>
+          <li>Second-class scholarship for academic performance</li>
+          <li>CET-4 and CET-6 certificates</li>
+          <li>ByteDance Youth Training Camp certificate</li>
+        </ul>
+      </section>
+
+      <section class="skills">
+        <h2>Technical Topics</h2>
+        <ul>
+          <li>
+            <strong>Familiar with:</strong>
+            <p>C、Javascript、Java、Go</p>
+          </li>
+          <li>
+            <strong>Dev & Env:</strong>
+            <p>Git，Vim/VSCode/IDEA，Linux</p>
+            <!-- <ul>
+              <li>JavaScript, TypeScript, Node.js</li>
+              <li>HTML; CSS, Sass, W3C</li>
+              <li>React, Vue3, Vanilla.js</li>
+            </ul> -->
+          </li>
+          <li>
+            <strong>Linux & Infrastructure:</strong>
+            <p>High-performance storage, virtualization, protocol stack</p>
+            <p>Kernel, KVM, Qemu, Libvirt, DPDK, SPDK, containers</p>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Recently Do <sub style="font-size: .5em;">2023-03</sub></h2>
+        <ul>
+          <li>Learn <a href="https://15445.courses.cs.cmu.edu/spring2023/schedule.html">Database Systems</a></li>
+          <li>Learn <a href="http://www.cs.toronto.edu/~demke/2227/S.21/readings.shtml">Distributed Systems</a></li>
+          <li>cv <a href="https://tannal.deno.dev/cv.pdf">latest version</a></li>
+        </ul>
+      </section>
+      <!-- <section>
+        <h2>References</h2>
+        <p>
+          Marcos Cáceres<br>
+          WebKit Standards and Interop<br>
+          <a href="mailto:marcosc@apple.com">marcosc@apple.com</a>
+        </p>
+      </section> -->
+    </div>
+  </main>
+
+  <script>
+
+  </script>
+
+</body>
+
+</html>
