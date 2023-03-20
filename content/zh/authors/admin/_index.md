@@ -47,7 +47,7 @@ social:
     icon_pack: fas
     link: mailto:tannal.cn@gmail.com
   - icon: weixin
-    icon_pack: fas
+    icon_pack: fab
     label: mengtanjing
     link: ''
   - icon: github
