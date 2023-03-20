@@ -62,6 +62,7 @@ void increment(int & x) {
 
 ```
 
+![](featured.png)
 
 # 如何理解
 
