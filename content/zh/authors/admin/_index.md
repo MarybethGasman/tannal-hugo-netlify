@@ -49,7 +49,7 @@ social:
   - icon: weixin
     icon_pack: fab
     label: mengtanjing
-    link: ''
+    link: '#'
   - icon: github
     icon_pack: fab
     link: https://www.github.com/MarybethGasman
